@@ -11,6 +11,8 @@ CELL_SIZE = 20
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snake Game - Mouse Controlled")
 clock = pygame.time.Clock()
+speed = 10
+score = 0
 
 # Colors
 BLACK = (0, 0, 0)
@@ -59,6 +61,8 @@ while running:
 
     # Check for food collision
     if new_head == food:
+        score += 1
+        speed += 1
         food = (random.randrange(0, WIDTH, CELL_SIZE),
                 random.randrange(0, HEIGHT, CELL_SIZE))
     else:
@@ -71,6 +75,6 @@ while running:
         draw_rect(GREEN, pos)
 
     pygame.display.flip()
-    clock.tick(10)
+    clock.tick(speed)
 
 pygame.quit()
