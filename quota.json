@@ -1,0 +1,8 @@
+{
+  "gpt-5": {
+    "window": "3h"
+  },
+  "gpt-5-thinking": {
+    "window": "1w"
+  }
+}
